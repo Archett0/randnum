@@ -8,7 +8,6 @@ on:
 jobs:
 
   check-out:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -17,7 +16,7 @@ jobs:
       uses: actions/checkout@v3
       
   setup:
-
+    needs: check-out
     runs-on: ubuntu-latest
           
     steps:
@@ -29,7 +28,7 @@ jobs:
       uses: docker/setup-buildx-action@v2
     
   login-to-docker-hub:
-
+    needs: [check-out, setup]
     runs-on: ubuntu-latest
 
     steps:
@@ -41,7 +40,7 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
         
   build-and-push:
-
+    needs: [check-out, setup, login-to-docker-hub]
     runs-on: ubuntu-latest
 
     steps:        
