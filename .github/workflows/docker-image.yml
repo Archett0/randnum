@@ -46,9 +46,8 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v3
       with:
-        context: .
         push: true
-        tags: archett0/workshop:latest
+        tags: archett0/workshop:v1.9.0
 
     - name: Image digest
       run: echo ${{ steps.docker_build.outputs.digest }}
