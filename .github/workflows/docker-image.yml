@@ -47,7 +47,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: archett0/workshop:${ GITHUB_REF }
+        tags: archett0/workshop:${{ github.ref_name }}
 
     - name: Image digest
       run: echo ${{ steps.docker_build.outputs.digest }}
