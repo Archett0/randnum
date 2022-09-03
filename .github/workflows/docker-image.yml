@@ -25,10 +25,7 @@ jobs:
       uses: actions/setup-go@v3
       with:
         go-version: 1.18
-
-    - name: Build
-      run: go build -v ./...   
-    
+ 
   login-to-docker-hub:
     needs: [check-out, setup]
     runs-on: ubuntu-latest
@@ -50,7 +47,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: archett0/workshop:v1.9.0
+        tags: archett0/workshop:latest
 
     - name: Image digest
       run: echo ${{ steps.docker_build.outputs.digest }}
