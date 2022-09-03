@@ -59,7 +59,7 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "Name: ${{secrets.NAME}} \n Matriculation: ${{secrets.MATRICULATION}} \n Email: ${{secrets.EMAIL}} \n Repo: ${{github.repositoryUrl}} \n Image name: ${{secrets.IMAGE_NAME}}:${{ github.ref_name }} \n Image URL: ${{secrets.IMAGE_URL}}"
+                  "text": "Name: ${{secrets.NAME}} \n Matriculation: ${{secrets.MATRICULATION}} \n Email: ${{secrets.EMAIL}} \n Repo: ${{github.repositoryUrl}} \n Image name: ${{secrets.IMAGE_NAME}} \n Image URL: ${{secrets.IMAGE_URL}}"
                 }
               }
             ]
